@@ -15,9 +15,10 @@ class UpComingMoviesStore {
   }
 
   async getMovies() {
+    //kumardipesh5
     try {
       const { data } = await http.get(
-        "https://imdb-api.com/en/API/ComingSoon/k_eds5tnq4"
+        "https://imdb-api.com/en/API/ComingSoon/k_380fl9dm"
       );
       runInAction(() => {
         this.movieList = data;

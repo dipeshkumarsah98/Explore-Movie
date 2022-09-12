@@ -14,9 +14,10 @@ class MovieDetailStore {
     });
   }
   getMovie = async (id) => {
+    // kumardipesh2
     try {
       const { data } = await http.get(
-        `https://imdb-api.com/en/API/Title/k_eds5tnq4/${id}`
+        `https://imdb-api.com/en/API/Title/k_u9j9sghh/${id}`
       );
       runInAction(() => {
         this.movie = data;

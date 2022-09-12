@@ -6,6 +6,7 @@ import Top250Movies from "./Pages/Top250Movies";
 import ComingSoon from "./Pages/ComingSoon";
 import InTheaters from "./Pages/InTheaters";
 import MovieDetails from "./Pages/MovieDetails";
+import SearchResult from "./Pages/SearchResult";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="coming-soon" element={<ComingSoon />} />
         <Route path="in-theater" element={<InTheaters />} />
         <Route path="movie/:id" element={<MovieDetails />} />
+        <Route path="search/:expression" element={<SearchResult />} />
       </Routes>
 
       <Footer />

@@ -2,12 +2,13 @@ import React, { useState, useRef } from "react";
 import { GiHamburgerMenu, GiTireIronCross } from "react-icons/gi";
 import { BsSearch } from "react-icons/bs";
 import Logo from "../../img/Logo/logo-color.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [expression, setExpression] = useState("");
   const item = useRef(null);
-
+  const navigate = useNavigate();
   const handleToggle = () => {
     const hidden =
       "hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1";
@@ -20,6 +21,14 @@ export const Navbar = () => {
     }
     item.current.className = visible;
     return setToggle(!toggle);
+  };
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setExpression(value);
+  };
+
+  const handleSearch = () => {
+    navigate(`/search/${expression}`);
   };
 
   return (
@@ -44,13 +53,22 @@ export const Navbar = () => {
             />
           )}
           {/* search box */}
-          <div className="hidden relative lg:block">
-            <BsSearch className="absolute inset-y-0 left-0 my-auto pl-3 w-9 h-5 text-gray-500  pointer-events-none" />
-            <input
-              type="search"
-              className="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border md:text-lg border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              id=""
-            />
+          <div className="hidden lg:flex lg:gap-3">
+            <div className="hidden relative lg:block">
+              <BsSearch className="absolute cursor-pointer inset-y-0 left-0 my-auto pl-3 w-9 h-5 text-gray-500  pointer-events-none" />
+              <input
+                type="search"
+                placeholder="Search Movie...."
+                className="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border md:text-lg border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <button
+              onClick={handleSearch}
+              className="bg-blue-600 hover:bg-blue-700 transition-colors text-white px-3 py-2 w-20 rounded-md h-10"
+            >
+              Search
+            </button>
           </div>
         </div>
         <div
@@ -58,13 +76,22 @@ export const Navbar = () => {
           className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
           id="navbar-search"
         >
-          <div className="block relative lg:hidden my-3">
-            <BsSearch className="absolute inset-y-0 left-0 my-auto pl-3 w-9 h-5 text-gray-500  pointer-events-none" />
-            <input
-              type="search"
-              className="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border md:text-lg border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              id=""
-            />
+          <div className="flex items-center justify-center gap-3 lg:hidden">
+            <div className="block relative lg:hidden my-3">
+              <BsSearch className="absolute inset-y-0 left-0 my-auto pl-3 w-9 h-5 text-gray-500  pointer-events-none" />
+              <input
+                type="search"
+                placeholder="Search Movie..."
+                className="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border md:text-lg border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+            <button
+              onClick={handleSearch}
+              className="bg-blue-600 hover:bg-blue-700 transition-colors text-white px-3 py-2 w-20 rounded-md h-10"
+            >
+              Search
+            </button>
           </div>
           <ul className="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 lg:flex-row lg:space-x-8 lg:mt-0 lg:text-sm lg:font-medium lg:border-0 lg:bg-white lg:dark:bg-gray-900 ">
             <li className="block py-2 pr-4 pl-3 text-black hover:text-blue-600  rounded md:text-lg md:bg-transparent cursor-pointer md:p-0 dark:text-white">

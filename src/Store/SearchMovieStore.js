@@ -1,37 +1,34 @@
 import { action, makeObservable, observable, runInAction } from "mobx";
 import http from "../Http/Http";
 
-class PopularMoviesStore {
+class SearchMovieStore {
   movieList = [];
-  status = "initial";
   isLoading = true;
   error = "";
-
   constructor() {
     makeObservable(this, {
       movieList: observable,
-      status: observable,
       isLoading: observable,
       error: observable,
-      getPopularMoviesList: action,
+      searchMovie: action,
     });
   }
-  async getPopularMoviesList() {
-    // kumardipesh
+  async searchMovie(expression) {
+    // kumardipesh3
     try {
-      const { data } = await http.get(
-        "https://imdb-api.com/en/API/MostPopularMovies/k_6x46u7in"
-      );
+      const endPoint = `https://imdb-api.com/en/API/SearchMovie/k_u9j9sghh/${expression}`;
+      console.log(endPoint);
+      const { data } = await http.get(endPoint);
       runInAction(() => {
         this.movieList = data;
         this.error = data.errorMessage;
         this.isLoading = false;
       });
     } catch (error) {
-      console.log("error::", error);
+      console.log("Error:::", error);
     }
   }
 }
 
-const popularMoviesStore = new PopularMoviesStore();
-export default popularMoviesStore;
+const searchMovieStore = new SearchMovieStore();
+export default searchMovieStore;

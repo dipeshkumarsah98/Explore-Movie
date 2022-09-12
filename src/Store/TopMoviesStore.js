@@ -16,9 +16,10 @@ class TopMoviesStore {
   }
 
   async getMovies() {
+    // kumardipesh4
     try {
       const { data } = await http.get(
-        "https://imdb-api.com/en/API/Top250Movies/k_eds5tnq4"
+        "https://imdb-api.com/en/API/Top250Movies/k_qzwyf1jr"
       );
       runInAction(() => {
         this.movieList = data;
