@@ -21,8 +21,6 @@ const MovieDetails = () => {
     setMovie(data);
   };
 
-  console.log("movie Detail Component", movie);
-
   if (movieDetailStore?.isLoading) return <Loading />;
   if (movieDetailStore?.errors)
     return <ErrorMessage error={movieDetailStore.errors} />;

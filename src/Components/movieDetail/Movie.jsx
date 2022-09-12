@@ -19,7 +19,6 @@ const Movie = ({ movie }) => {
     setBoxOffice(movie.boxOffice);
     setSuggestionMovie(movie.similars);
   };
-  console.log("Movie Component::", movie);
 
   return (
     <div className="container text-white">
