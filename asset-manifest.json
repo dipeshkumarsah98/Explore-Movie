@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/explore-movie/static/css/main.3359e99b.css",
-    "main.js": "/explore-movie/static/js/main.3e19b7fd.js",
+    "main.css": "/explore-movie/static/css/main.5b0e7e60.css",
+    "main.js": "/explore-movie/static/js/main.b4ee535d.js",
     "static/js/787.052383e3.chunk.js": "/explore-movie/static/js/787.052383e3.chunk.js",
     "static/media/logo-color.png": "/explore-movie/static/media/logo-color.b459fa28d7069eb74d98.png",
     "index.html": "/explore-movie/index.html",
-    "main.3359e99b.css.map": "/explore-movie/static/css/main.3359e99b.css.map",
-    "main.3e19b7fd.js.map": "/explore-movie/static/js/main.3e19b7fd.js.map",
+    "main.5b0e7e60.css.map": "/explore-movie/static/css/main.5b0e7e60.css.map",
+    "main.b4ee535d.js.map": "/explore-movie/static/js/main.b4ee535d.js.map",
     "787.052383e3.chunk.js.map": "/explore-movie/static/js/787.052383e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3359e99b.css",
-    "static/js/main.3e19b7fd.js"
+    "static/css/main.5b0e7e60.css",
+    "static/js/main.b4ee535d.js"
   ]
 }
