@@ -1,5 +1,6 @@
 import { action, makeObservable, observable, runInAction } from "mobx";
 import http from "../Http/Http";
+import getApi from "../Utils/getApi";
 
 class PopularMoviesStore {
   movieList = [];
@@ -19,8 +20,9 @@ class PopularMoviesStore {
   async getPopularMoviesList() {
     // kumardipesh
     try {
+      const api = getApi();
       const { data } = await http.get(
-        "https://imdb-api.com/en/API/MostPopularMovies/k_6x46u7in"
+        `https://imdb-api.com/en/API/MostPopularMovies/${api}`
       );
       runInAction(() => {
         this.movieList = data;

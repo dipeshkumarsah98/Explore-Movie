@@ -1,5 +1,6 @@
 import { action, makeObservable, observable, runInAction } from "mobx";
 import http from "../Http/Http";
+import getApi from "../Utils/getApi";
 
 class MovieDetailStore {
   movie = {};
@@ -16,8 +17,9 @@ class MovieDetailStore {
   getMovie = async (id) => {
     // kumardipesh2
     try {
+      const api = getApi();
       const { data } = await http.get(
-        `https://imdb-api.com/en/API/Title/k_u9j9sghh/${id}`
+        `https://imdb-api.com/en/API/Title/${api}/${id}`
       );
       runInAction(() => {
         this.movie = data;
