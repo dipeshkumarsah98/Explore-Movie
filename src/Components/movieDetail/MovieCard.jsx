@@ -3,6 +3,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { observer } from "mobx-react-lite";
 
 const MovieCard = ({ movie }) => {
   const RatingStar = ({ lable }) => {
@@ -36,4 +37,4 @@ const MovieCard = ({ movie }) => {
   );
 };
 
-export default MovieCard;
+export default observer(MovieCard);

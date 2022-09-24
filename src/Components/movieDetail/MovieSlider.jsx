@@ -1,4 +1,5 @@
 import { Carousel } from "flowbite-react";
+import { observer } from "mobx-react-lite";
 import React from "react";
 import MovieCard from "./MovieCard";
 
@@ -20,4 +21,4 @@ const MovieSlider = ({ suggestedMovies }) => {
   );
 };
 
-export default MovieSlider;
+export default observer(MovieSlider);
