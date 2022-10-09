@@ -7,12 +7,12 @@ import ComingSoon from "./Pages/ComingSoon";
 import InTheaters from "./Pages/InTheaters";
 import MovieDetails from "./Pages/MovieDetails";
 import SearchResult from "./Pages/SearchResult";
-
+import Request from "./Components/Request";
 function App() {
   return (
     <>
       <Navbar />
-
+      <Request />
       <Routes>
         <Route path="*" element={<PopularMovies />} />
         <Route path="top-250-movies" element={<Top250Movies />} />
