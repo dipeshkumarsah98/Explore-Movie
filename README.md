@@ -7,3 +7,5 @@ I developed this as a side project using ReactJS and MobX as a state management.
 - React Js
 - MobX
 - Tailwind Css
+
+
